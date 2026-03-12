@@ -69,7 +69,7 @@ export const Content = () => {
                 <CollectionGrid>
                     <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image="public\img\vinilo1.jpg" alt="Vinilos nuevos" />
+                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image="/img/vinilo1.jpg" alt="Vinilos nuevos" />
                             <CardContent>
                                 <TypographyT gutterBottom variant="h5" sx={{ fontSize: { xs: '16px', sm: '20px' } }}>
                                     Vinilos nuevos
@@ -83,7 +83,7 @@ export const Content = () => {
 
                     <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image='public\img\vinilos_usados.jpg' alt="Vinilos usados" />
+                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image='/img/vinilos_usados.jpg' alt="Vinilos usados" />
                             <CardContent>
                                 <TypographyT gutterBottom variant="h5" sx={{ fontSize: { xs: '16px', sm: '20px' } }}>
                                     Segunda mano
@@ -97,7 +97,7 @@ export const Content = () => {
 
                     <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image='public\img\vinilo_especial.jpg' alt="Ediciones especiales" />
+                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image='/img/vinilo_especial.jpg' alt="Ediciones especiales" />
                             <CardContent>
                                 <TypographyT gutterBottom variant="h5" sx={{ fontSize: { xs: '16px', sm: '20px' } }}>
                                     Ediciones especiales
@@ -111,7 +111,7 @@ export const Content = () => {
 
                     <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image='public\img\accesorios.jpg' alt="Accesorios" />
+                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image='/img/accesorios.jpg' alt="Accesorios" />
                             <CardContent>
                                 <TypographyT gutterBottom variant="h5" sx={{ fontSize: { xs: '16px', sm: '20px' } }}>
                                     Accesorios
