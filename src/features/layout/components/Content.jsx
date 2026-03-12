@@ -48,7 +48,7 @@ export const Content = () => {
                     <CardMedia
                         component="img"
                         sx={{ height: { xs: '140px', sm: '200px', md: '260px' } }}
-                        image='public\img\inicio.jpg'
+                        image='/img/inicio.jpg'
                         alt="Imagen de inicio"
                     />
                     <CardContent sx={{ backgroundColor: 'black' }}>
