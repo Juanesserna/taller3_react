@@ -1,3 +1,4 @@
+import { Box, Typography, Card } from '@mui/material';
 import { useState, useEffect } from 'react';
 import React from 'react'
 
@@ -19,5 +20,12 @@ export const UseOnlineStatus = () => {
         };
     }, []);
 
-    return <h1>{isOnline ? '✅ En línea' : '❌ Desconectado'}</h1>;
+    return (
+        <Card sx={{ width: '22%' }}>
+            <Typography>Use Online Status</Typography>
+            <Box>
+                <Typography>{isOnline ? '✅ En línea' : '❌ Desconectado'}</Typography>
+            </Box>
+        </Card>
+    );
 }

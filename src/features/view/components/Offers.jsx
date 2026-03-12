@@ -1,17 +1,28 @@
 import { React, useState } from 'react'
-import { Use } from '../hooks/Use'
 import { UseOnlineStatus } from '../hooks/UseOnlineStatus'
+import { UseState } from '../hooks/UseState'
+import { UseEffect } from '../hooks/UseEffect'
+import { UseContext } from '../hooks/UseContext'
+import { UseRef } from '../hooks/UseRef'
+import { UseReducer } from '../hooks/UseReducer'
+import { UseCallback } from '../hooks/UseCallback'
+import { UseMemo } from '../hooks/UseMemo'
+import { Box } from '@mui/material'
 
 export const Offers = () => {
-    const [color, setColor] = useState("red");
     return (
-        <div>
-            <h1>My color favorito es {color}</h1>
-            <button type='button' onClick={() => setColor("Blue")}>Blue</button>
-            <button type='button' onClick={() => setColor("Black")}>Blue</button>
-            <button type='button' onClick={() => setColor("White")}>Blue</button>
-            <Use />
-            <UseOnlineStatus/>
-        </div>
+        <Box sx={{
+            display: 'flex',
+            flexWrap: 'wrap'
+        }}>
+            <UseOnlineStatus />
+            <UseState />
+            <UseEffect />
+            <UseContext />
+            <UseRef />
+            <UseReducer />
+            <UseCallback />
+            <UseMemo />
+        </Box>
     )
 }

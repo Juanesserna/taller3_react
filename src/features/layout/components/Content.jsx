@@ -1,150 +1,185 @@
 import React from 'react'
-import main_img from '../public/inicio.jpg'
-import monitor_img from '../public/monitoreo.avif'
-import document_img from '../public/documentar.avif'
-import stock_img from '../public/conteo.png'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Button, Typography, Box, Card, CardContent, CardMedia, CardActionArea, Accordion, AccordionSummary, AccordionDetails, } from '@mui/material';
+import { Typography, Box, Card, CardContent, CardMedia, CardActionArea, Accordion, AccordionSummary, AccordionDetails, styled } from '@mui/material';
 
-const cards = [
-    {
-        id: 1,
-        title: 'Envío seguro',
-        description: 'Todos nuestros vinilos son empacados con materiales especializados para garantizar que lleguen en perfecto estado a tu puerta.',
+const TypographyB = styled(Typography)(({ theme }) => ({
+    color: 'beige'
+}))
+
+const TypographyT = styled(Typography)(({ theme }) => ({
+    color: 'white',
+    backgroundColor: 'black',
+    borderRadius: '5px'
+}))
+
+const Cards = styled(Card)(({ theme }) => ({
+    maxWidth: '100%',
+    width: '24%',
+    backgroundColor: 'black'
+}))
+
+const AccordionM = styled(Accordion)(({ theme }) => ({
+    backgroundColor: 'rgba(7, 7, 7, 0.9)',
+    color:'beige',
+    '&:hover': {
+        color: 'black',
+        backgroundColor: '#ff5722'
     },
-    {
-        id: 2,
-        title: 'Ediciones limitadas',
-        description: 'Accede a prensados exclusivos, ediciones de color y lanzamientos limitados que no encontrarás en ningún otro lugar.',
-    },
-    {
-        id: 3,
-        title: 'Calidad garantizada',
-        description: 'Cada disco pasa por una revisión de calidad antes de ser despachado. Si no estás satisfecho, te lo cambiamos sin preguntas.',
-    },
-    {
-        id: 4,
-        title: 'Catálogo diverso',
-        description: 'Desde jazz clásico hasta metal progresivo. Tenemos vinilos para todos los gustos y géneros musicales.',
-    },
-    {
-        id: 5,
-        title: 'Precios justos',
-        description: 'Ofrecemos los mejores precios del mercado en vinilos nuevos y de segunda mano, con descuentos frecuentes para nuestros clientes.',
-    },
-    {
-        id: 6,
-        title: 'Comunidad vinilera',
-        description: 'Únete a nuestra comunidad de amantes del vinilo. Reseñas, recomendaciones y eventos especiales para coleccionistas.',
-    },
-];
+}))
+
+
 
 export const Content = () => {
-    const [selectedCard, setSelectedCard] = React.useState(0);
     return (
         <Box>
-            <Card sx={{ maxWidth: '100%', margin: '1%', marginTop: '5%' }}>
+
+            <Card sx={{ maxWidth: '100%', margin: '1%' }}>
                 <CardActionArea>
-                    <CardMedia component="img" height="200" image={main_img} alt="Imagen de inicio" />
+                    <CardMedia component="img" height="200" image='public\img\inicio.jpg' alt="Imagen de inicio" />
                     <CardContent sx={{ backgroundColor: 'black' }}>
-                        <Typography gutterBottom variant="h4" component="div" sx={{ color: 'white' }}>
+                        <TypographyT variant="h4">
                             Tu tienda de vinilos online
-                        </Typography>
-                        <Typography variant="body2" sx={{ color: 'beige' }}>
+                        </TypographyT>
+                        <TypographyB variant="body2">
                             Somos apasionados del sonido analógico. Nuestra tienda ofrece una cuidada selección de vinilos de todos los géneros y épocas, desde clásicos atemporales hasta los lanzamientos más recientes. Compra desde cualquier lugar, recibe en tu casa y disfruta del ritual de escuchar música como se merece.
-                        </Typography>
+                        </TypographyB>
                     </CardContent>
                 </CardActionArea>
             </Card>
+
             <Box sx={{ textAlign: 'center', margin: '1%', marginTop: '2%' }}>
-                <Typography variant='h4' sx={{ backgroundColor: 'black' }}>Nuestra colección</Typography>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'left', marginTop: '1%' }}>
-                    <Card sx={{ maxWidth: 345, backgroundColor: 'black' }}>
+                <TypographyT variant='h4'>Nuestra colección</TypographyT>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'left', marginTop: '0.5%' }}>
+
+                    <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" height="140" image={monitor_img} alt="Vinilos nuevos" />
+                            <CardMedia component="img" height="180" image="public\img\vinilo1.jpg" alt="Vinilos nuevos" />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white' }}>
+                                <TypographyT gutterBottom variant="h5">
                                     Vinilos nuevos
-                                </Typography>
-                                <Typography variant="body2" sx={{ color: 'beige' }}>
+                                </TypographyT>
+                                <TypographyB variant="body2">
                                     Los últimos lanzamientos y reediciones recién llegadas al stock. Discos sin abrir, con su plástico original y en perfecto estado de reproducción.
-                                </Typography>
+                                </TypographyB>
                             </CardContent>
                         </CardActionArea>
-                    </Card>
-                    <Card sx={{ maxWidth: 345, backgroundColor: 'black' }}>
+                    </Cards>
+
+                    <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" height="140" image={document_img} alt="Vinilos usados" />
+                            <CardMedia component="img" height="180" image='public\img\vinilos_usados.jpg' alt="Vinilos usados" />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white' }}>
+                                <TypographyT gutterBottom variant="h5">
                                     Segunda mano
-                                </Typography>
-                                <Typography variant="body2" sx={{ color: 'beige' }}>
+                                </TypographyT>
+                                <TypographyB variant="body2">
                                     Vinilos usados revisados y clasificados por condición: Mint, Very Good Plus y Good. Cada disco llega con una descripción honesta de su estado visual y sonoro.
-                                </Typography>
+                                </TypographyB>
                             </CardContent>
                         </CardActionArea>
-                    </Card>
-                    <Card sx={{ maxWidth: 345, backgroundColor: 'black' }}>
+                    </Cards>
+
+                    <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" height="140" image={stock_img} alt="Ediciones especiales" />
+                            <CardMedia component="img" height="180" image='public\img\vinilo_especial.jpg' alt="Ediciones especiales" />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white' }}>
+                                <TypographyT gutterBottom variant="h5">
                                     Ediciones especiales
-                                </Typography>
-                                <Typography variant="body2" sx={{ color: 'beige' }}>
+                                </TypographyT>
+                                <TypographyB variant="body2">
                                     Prensados de color, picture discs, box sets y ediciones numeradas de colección. Piezas únicas para el coleccionista más exigente.
-                                </Typography>
+                                </TypographyB>
                             </CardContent>
                         </CardActionArea>
-                    </Card>
-                    <Card sx={{ maxWidth: 345, backgroundColor: 'black' }}>
+                    </Cards>
+
+                    <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" height="140" image={stock_img} alt="Accesorios" />
+                            <CardMedia component="img" height="180" image='public\img\accesorios.jpg' alt="Accesorios" />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white' }}>
+                                <TypographyT gutterBottom variant="h5">
                                     Accesorios
-                                </Typography>
-                                <Typography variant="body2" sx={{ color: 'beige' }}>
+                                </TypographyT>
+                                <TypographyB variant="body2">
                                     Fundas protectoras, limpiadoras de discos, agujas, tocadiscos y todo lo que necesitas para cuidar y disfrutar tu colección al máximo.
-                                </Typography>
+                                </TypographyB>
                             </CardContent>
                         </CardActionArea>
-                    </Card>
+                    </Cards>
+
                 </Box>
             </Box>
-            <Box sx={{ margin: '1' }}>
-                <Typography variant='h4' sx={{ backgroundColor: 'black' }}>Beneficios</Typography>
-                <Accordion defaultExpanded>
+
+            <Box sx={{ margin: '1%', marginTop: '2%' }}>
+                <TypographyT variant='h4' sx={{ paddingLeft: '1.5%', marginBottom:'0.3%' }}>Beneficios</TypographyT>
+
+                <AccordionM>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1-content"
                         id="panel1-header"
                     >
-                        <Typography component="span">Expanded by default</Typography>
+                        <Typography component="span">Sonido auténtico e inigualable</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                            Los vinilos ofrecen una calidad de audio cálida y orgánica que los formatos digitales simplemente no pueden replicar.
+                            Cada surco del disco captura matices, texturas y detalles sonoros que hacen que cada escucha sea una experiencia única e inmersiva.
+                            Redescubre tu música favorita como nunca antes la habías oído.
                         </Typography>
                     </AccordionDetails>
-                </Accordion>
-                <Accordion>
+                </AccordionM>
+
+                <AccordionM>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2-content"
                         id="panel2-header"
                     >
-                        <Typography component="span">Header</Typography>
+                        <Typography component="span">Arte y colección en tus manos</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                            Cada vinilo es mucho más que música: es un objeto de colección. Las portadas de gran formato, los libretos interiores
+                            y las ediciones limitadas convierten cada disco en una pieza de arte. Construye una colección que refleje tu personalidad
+                            y que puedas exhibir con orgullo.
                         </Typography>
                     </AccordionDetails>
-                </Accordion>
+                </AccordionM>
+
+                <AccordionM>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel3-content"
+                        id="panel3-header"
+                    >
+                        <Typography component="span">Envío seguro y empaque especializado</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Sabemos lo valioso que es tu pedido. Por eso, cada vinilo se empaca con materiales de protección especializados
+                            que garantizan que llegue en perfecto estado a tu puerta. Enviamos a todo el país con seguimiento en tiempo real
+                            para que no pierdas de vista tu nuevo tesoro musical.
+                        </Typography>
+                    </AccordionDetails>
+                </AccordionM>
+
+                <AccordionM>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel4-content"
+                        id="panel4-header"
+                    >
+                        <Typography component="span">Devoluciones sin complicaciones</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Tu satisfacción es nuestra prioridad. Si por alguna razón tu vinilo llega con algún defecto de fábrica o daño en el
+                            envío, gestionamos la devolución o el cambio sin preguntas en un plazo de 30 días. Compra con total tranquilidad
+                            y confianza.
+                        </Typography>
+                    </AccordionDetails>
+                </AccordionM>
             </Box>
         </Box>
     )

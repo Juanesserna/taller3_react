@@ -70,7 +70,7 @@ export const Header = () => {
             }} >
                 <Toolbar sx={{ justifyContent: 'space-around' }}>
                     <Box>
-                        <Typography variant='h4'>Venta de Vinilos</Typography>
+                        <Typography variant='h4' sx={{color: '#ff5722'}}>Venta de Vinilos</Typography>
                     </Box>
                     <ButtonGroup>
                         <Button variant="text" color='inherit' startIcon={<HomeFilledIcon />}><StyledNavLink to='/'>Inicio</StyledNavLink></Button>
