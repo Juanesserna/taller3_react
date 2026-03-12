@@ -2,45 +2,60 @@ import React from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Typography, Box, Card, CardContent, CardMedia, CardActionArea, Accordion, AccordionSummary, AccordionDetails, styled } from '@mui/material';
 
-const TypographyB = styled(Typography)(({ theme }) => ({
+const TypographyB = styled(Typography)({
     color: 'beige'
-}))
+})
 
-const TypographyT = styled(Typography)(({ theme }) => ({
+const TypographyT = styled(Typography)({
     color: 'white',
     backgroundColor: 'black',
     borderRadius: '5px'
-}))
+})
 
 const Cards = styled(Card)(({ theme }) => ({
-    maxWidth: '100%',
-    width: '24%',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    width: '100%',
 }))
 
-const AccordionM = styled(Accordion)(({ theme }) => ({
+const CollectionGrid = styled(Box)(({ theme }) => ({
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    gap: '12px',
+    textAlign: 'left',
+    marginTop: '0.5%',
+    [theme.breakpoints.down('lg')]: {
+        gridTemplateColumns: 'repeat(2, 1fr)',
+    },
+    [theme.breakpoints.down('sm')]: {
+        gridTemplateColumns: '1fr',
+    },
+}))
+
+const AccordionM = styled(Accordion)({
     backgroundColor: 'rgba(7, 7, 7, 0.9)',
-    color:'beige',
+    color: 'beige',
     '&:hover': {
         color: 'black',
         backgroundColor: '#ff5722'
     },
-}))
-
-
+})
 
 export const Content = () => {
     return (
         <Box>
-
             <Card sx={{ maxWidth: '100%', margin: '1%' }}>
                 <CardActionArea>
-                    <CardMedia component="img" height="200" image='public\img\inicio.jpg' alt="Imagen de inicio" />
+                    <CardMedia
+                        component="img"
+                        sx={{ height: { xs: '140px', sm: '200px', md: '260px' } }}
+                        image='public/img/inicio.jpg'
+                        alt="Imagen de inicio"
+                    />
                     <CardContent sx={{ backgroundColor: 'black' }}>
-                        <TypographyT variant="h4">
+                        <TypographyT variant="h4" sx={{ fontSize: { xs: '20px', sm: '28px', md: '34px' } }}>
                             Tu tienda de vinilos online
                         </TypographyT>
-                        <TypographyB variant="body2">
+                        <TypographyB variant="body2" sx={{ fontSize: { xs: '12px', sm: '14px' }, mt: '8px' }}>
                             Somos apasionados del sonido analógico. Nuestra tienda ofrece una cuidada selección de vinilos de todos los géneros y épocas, desde clásicos atemporales hasta los lanzamientos más recientes. Compra desde cualquier lugar, recibe en tu casa y disfruta del ritual de escuchar música como se merece.
                         </TypographyB>
                     </CardContent>
@@ -48,14 +63,15 @@ export const Content = () => {
             </Card>
 
             <Box sx={{ textAlign: 'center', margin: '1%', marginTop: '2%' }}>
-                <TypographyT variant='h4'>Nuestra colección</TypographyT>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'left', marginTop: '0.5%' }}>
-
+                <TypographyT variant='h4' sx={{ fontSize: { xs: '20px', sm: '28px', md: '34px' } }}>
+                    Nuestra colección
+                </TypographyT>
+                <CollectionGrid>
                     <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" height="180" image="public\img\vinilo1.jpg" alt="Vinilos nuevos" />
+                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image="public/img/vinilo1.jpg" alt="Vinilos nuevos" />
                             <CardContent>
-                                <TypographyT gutterBottom variant="h5">
+                                <TypographyT gutterBottom variant="h5" sx={{ fontSize: { xs: '16px', sm: '20px' } }}>
                                     Vinilos nuevos
                                 </TypographyT>
                                 <TypographyB variant="body2">
@@ -67,9 +83,9 @@ export const Content = () => {
 
                     <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" height="180" image='public\img\vinilos_usados.jpg' alt="Vinilos usados" />
+                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image='public/img/vinilos_usados.jpg' alt="Vinilos usados" />
                             <CardContent>
-                                <TypographyT gutterBottom variant="h5">
+                                <TypographyT gutterBottom variant="h5" sx={{ fontSize: { xs: '16px', sm: '20px' } }}>
                                     Segunda mano
                                 </TypographyT>
                                 <TypographyB variant="body2">
@@ -81,9 +97,9 @@ export const Content = () => {
 
                     <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" height="180" image='public\img\vinilo_especial.jpg' alt="Ediciones especiales" />
+                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image='public/img/vinilo_especial.jpg' alt="Ediciones especiales" />
                             <CardContent>
-                                <TypographyT gutterBottom variant="h5">
+                                <TypographyT gutterBottom variant="h5" sx={{ fontSize: { xs: '16px', sm: '20px' } }}>
                                     Ediciones especiales
                                 </TypographyT>
                                 <TypographyB variant="body2">
@@ -95,9 +111,9 @@ export const Content = () => {
 
                     <Cards>
                         <CardActionArea>
-                            <CardMedia component="img" height="180" image='public\img\accesorios.jpg' alt="Accesorios" />
+                            <CardMedia component="img" sx={{ height: { xs: '140px', sm: '180px' } }} image='public/img/accesorios.jpg' alt="Accesorios" />
                             <CardContent>
-                                <TypographyT gutterBottom variant="h5">
+                                <TypographyT gutterBottom variant="h5" sx={{ fontSize: { xs: '16px', sm: '20px' } }}>
                                     Accesorios
                                 </TypographyT>
                                 <TypographyB variant="body2">
@@ -106,36 +122,25 @@ export const Content = () => {
                             </CardContent>
                         </CardActionArea>
                     </Cards>
-
-                </Box>
+                </CollectionGrid>
             </Box>
 
             <Box sx={{ margin: '1%', marginTop: '2%' }}>
-                <TypographyT variant='h4' sx={{ paddingLeft: '1.5%', marginBottom:'0.3%' }}>Beneficios</TypographyT>
+                <TypographyT variant='h4' sx={{ paddingLeft: '1.5%', marginBottom: '0.3%', fontSize: { xs: '20px', sm: '28px', md: '34px' } }}>
+                    Beneficios
+                </TypographyT>
 
-                <AccordionM>
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1-content"
-                        id="panel1-header"
-                    >
-                        <Typography component="span">Sonido auténtico e inigualable</Typography>
+                <AccordionM defaultExpanded>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1-content" id="panel1-header">
+                        <Typography component="span">Github</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography>
-                            Los vinilos ofrecen una calidad de audio cálida y orgánica que los formatos digitales simplemente no pueden replicar.
-                            Cada surco del disco captura matices, texturas y detalles sonoros que hacen que cada escucha sea una experiencia única e inmersiva.
-                            Redescubre tu música favorita como nunca antes la habías oído.
-                        </Typography>
+                        <Typography>https://github.com/Juanesserna/taller3_react</Typography>
                     </AccordionDetails>
                 </AccordionM>
 
                 <AccordionM>
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel2-content"
-                        id="panel2-header"
-                    >
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2-content" id="panel2-header">
                         <Typography component="span">Arte y colección en tus manos</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -148,11 +153,7 @@ export const Content = () => {
                 </AccordionM>
 
                 <AccordionM>
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel3-content"
-                        id="panel3-header"
-                    >
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel3-content" id="panel3-header">
                         <Typography component="span">Envío seguro y empaque especializado</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -165,11 +166,7 @@ export const Content = () => {
                 </AccordionM>
 
                 <AccordionM>
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel4-content"
-                        id="panel4-header"
-                    >
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel4-content" id="panel4-header">
                         <Typography component="span">Devoluciones sin complicaciones</Typography>
                     </AccordionSummary>
                     <AccordionDetails>

@@ -5,8 +5,8 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 
 const footerLinks = {
-    Ayuda: ['Centro de ayuda', 'Devoluciones', 'Envíos', 'Garantía'],
-    Empresa: ['Sobre nosotros', 'Blog', 'Trabaja con nosotros', 'Prensa'],
+    Ayuda: ['Centro de ayuda', 'Devolución', 'Envíos', 'Garantía'],
+    Empresa: ['Sobre nosotros', 'Blog', 'Prensa'],
     Legal: ['Privacidad', 'Términos de uso', 'Cookies'],
 }
 const ContainerF = styled(Box)(({ theme }) => ({
@@ -55,7 +55,7 @@ export const Footer = () => {
                         </Typography>
                     </Box>
                     <Typography variant="body2" sx={{ color: '#888', maxWidth: 240, mb: 3 }}>
-                        Tu tienda de confianza para encontrar todo lo que necesitas con la mejor experiencia de compra.
+                        Tu tienda de confianza para encontrar todo lo que necesitas.
                     </Typography>
 
                     <Box sx={{ display: 'flex', gap: 1 }}>
